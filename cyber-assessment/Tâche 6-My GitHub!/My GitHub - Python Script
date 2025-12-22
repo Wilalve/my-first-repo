@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+import requests
+import sys
+
+if __name__ == "__main__":
+    # Get credentials from command line arguments
+    username = sys.argv[1]
+    password = sys.argv[2]  # This will be your Personal Access Token
+
+    # Define the GitHub API endpoint for the authenticated user
+    url = "https://api.github.com/user"
+
+    # Send a GET request using Basic Authentication
+    response = requests.get(url, auth=(username, password))
+
+    # Parse the JSON response
+    try:
+        json_data = response.json()
+        # GitHub returns a dictionary; we want the 'id' key
+        print(json_data.get("id"))
+    except ValueError:
+        print("None")

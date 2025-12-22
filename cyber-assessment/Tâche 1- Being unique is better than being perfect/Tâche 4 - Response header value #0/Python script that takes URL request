@@ -1,0 +1,12 @@
+#!/usr/bin/python3
+import urllib.request
+import sys
+
+if __name__ == "__main__":
+    url = sys.argv[1]
+    request = urllib.request.Request(url)
+    with urllib.request.urlopen(request) as response:
+        # Get the headers dictionary from the response
+        headers = response.info()
+        # Print the value associated with the specific key
+        print(headers.get("X-Request-Id"))

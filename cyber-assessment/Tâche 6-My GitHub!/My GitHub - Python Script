@@ -5,7 +5,7 @@ import sys
 if __name__ == "__main__":
     # Get credentials from command line arguments
     username = sys.argv[1]
-    password = sys.argv[2]  # This will be your Personal Access Token
+    password = sys.argv[2]  # This will be my Personal Access Token
 
     # Define the GitHub API endpoint for the authenticated user
     url = "https://api.github.com/user"
